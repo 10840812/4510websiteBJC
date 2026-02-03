@@ -8,10 +8,12 @@
     <style>
       :root {
         --bg: #fbfbfb;
+        --card: #ffffff;
         --ink: #111111;
         --muted: #5a5a5a;
         --line: #e7e7e7;
         --accent: #0f6fff;
+        --shadow: 0 24px 60px rgba(17, 17, 17, 0.12);
       }
 
       * {
@@ -20,21 +22,25 @@
 
       body {
         margin: 0;
-        background: var(--bg);
+        background: radial-gradient(circle at top, #f3f6ff 0%, var(--bg) 45%, #f7f3ff 100%);
         color: var(--ink);
         font: 16px/1.6 "Helvetica Neue", Helvetica, Arial, sans-serif;
       }
 
       .page {
         max-width: 860px;
-        margin: 0 auto;
-        padding: 64px 24px 96px;
+        margin: 56px auto 80px;
+        padding: 48px 40px 64px;
+        background: var(--card);
+        border-radius: 28px;
+        box-shadow: var(--shadow);
+        border: 1px solid #eef0f4;
       }
 
       header {
         border-bottom: 1px solid var(--line);
-        padding-bottom: 24px;
-        margin-bottom: 32px;
+        padding-bottom: 28px;
+        margin-bottom: 28px;
         display: flex;
         align-items: center;
         gap: 24px;
@@ -67,9 +73,14 @@
       }
 
       .contact {
-        margin-top: 12px;
+        margin: 16px 0 0;
         color: var(--muted);
         font-size: 14px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px 18px;
+        padding: 0;
+        list-style: none;
       }
 
       .contact a {
@@ -77,12 +88,30 @@
         text-decoration: none;
       }
 
+      .contact li {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .contact li::before {
+        content: "";
+        width: 6px;
+        height: 6px;
+        border-radius: 999px;
+        background: #cbd5f2;
+      }
+
       .contact a:hover {
         text-decoration: underline;
       }
 
       section {
-        margin-top: 28px;
+        margin-top: 24px;
+        padding: 20px 24px;
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        background: #fcfcff;
       }
 
       h2 {
@@ -115,6 +144,12 @@
           align-items: flex-start;
         }
 
+        .page {
+          margin: 24px 16px 48px;
+          padding: 32px 20px 48px;
+          border-radius: 20px;
+        }
+
         .headshot {
           width: 72px;
           height: 72px;
@@ -122,6 +157,10 @@
 
         h1 {
           font-size: 30px;
+        }
+
+        .contact {
+          gap: 8px 12px;
         }
       }
     </style>
@@ -133,15 +172,12 @@
         <div class="header-text">
           <h1>Blake Cherrington</h1>
           <p class="role">Accounting &amp; Finance — Business Development</p>
-          <div class="contact">
-            <span>American Fork, UT</span>
-            <span> • </span>
-            <a href="tel:+13859855012">385.985.5012</a>
-            <span> • </span>
-            <a href="mailto:cherringtonblake@gmail.com">cherringtonblake@gmail.com</a>
-            <span> • </span>
-            <a href="https://linkedin.com/BlakeCherrington">LinkedIn</a>
-          </div>
+          <ul class="contact">
+            <li>American Fork, UT</li>
+            <li><a href="tel:+13859855012">385.985.5012</a></li>
+            <li><a href="mailto:cherringtonblake@gmail.com">cherringtonblake@gmail.com</a></li>
+            <li><a href="https://linkedin.com/BlakeCherrington">LinkedIn</a></li>
+          </ul>
         </div>
       </header>
 
